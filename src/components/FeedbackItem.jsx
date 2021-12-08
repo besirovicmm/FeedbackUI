@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
+import Card from './shared/Card'
+import PropTypes from 'prop-types'
+import { FaTimes } from 'react-icons/fa'
 
-const FeedbackItem = () => {
-  const [rating, setRating] = useState(8)
-  const [text, setText] = useState('example of item')
+const FeedbackItem = ({ item, handleDelete }) => {
   return (
-    <div className="card">
-      <div className="num-display">{rating}</div>
-      <div className="text-display">{text}</div>
-    </div>
+    <Card>
+      <div className="num-display">{item.rating}</div>
+      <button className="close">
+        <FaTimes onClick={() => handleDelete(item.id)} color="purple" />
+      </button>
+      <div className="text-display">{item.text}</div>
+    </Card>
   )
 }
-
+FeedbackItem.propTypes = {
+  item: PropTypes.object.isRequired,
+}
 export default FeedbackItem
