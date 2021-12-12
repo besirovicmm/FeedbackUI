@@ -5,7 +5,9 @@
   margin: 0;
   padding: 0;
 }
-
+.card a {
+  margin-right: 20px;
+}
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #202142;
@@ -17,6 +19,10 @@ ul {
   list-style: none;
 }
 
+.active {
+  background: #000;
+  color: red;
+}
 .container {
   max-width: 768px;
   margin: auto;
